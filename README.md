@@ -65,7 +65,9 @@ Standalone fork of `scitex.os`. Pure stdlib — zero deps. The umbrella package'
 
 ## Part of SciTeX
 
-`scitex-os` is part of [**SciTeX**](https://scitex.ai).
+`scitex-os` is part of [**SciTeX**](https://scitex.ai). Install via
+the umbrella with `pip install scitex[os]` to use as
+`scitex.os` (Python).
 
 >Four Freedoms for Research
 >
