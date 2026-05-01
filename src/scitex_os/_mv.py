@@ -48,3 +48,5 @@ def mv(src, tgt):
     except OSError as e:
         print(f"\nError: {e}")
         successful = False
+
+    return successful
