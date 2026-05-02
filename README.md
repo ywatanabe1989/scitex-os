@@ -1,15 +1,5 @@
 # scitex-os
 
-<!-- scitex-badges:start -->
-[![PyPI](https://img.shields.io/pypi/v/scitex-os.svg)](https://pypi.org/project/scitex-os/)
-[![Python](https://img.shields.io/pypi/pyversions/scitex-os.svg)](https://pypi.org/project/scitex-os/)
-[![Tests](https://github.com/ywatanabe1989/scitex-os/actions/workflows/test.yml/badge.svg)](https://github.com/ywatanabe1989/scitex-os/actions/workflows/test.yml)
-[![Install Test](https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml/badge.svg)](https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml)
-[![Coverage](https://codecov.io/gh/ywatanabe1989/scitex-os/graph/badge.svg)](https://codecov.io/gh/ywatanabe1989/scitex-os)
-[![Docs](https://readthedocs.org/projects/scitex-os/badge/?version=latest)](https://scitex-os.readthedocs.io/en/latest/)
-[![License: AGPL v3](https://img.shields.io/badge/license-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-<!-- scitex-badges:end -->
-
 <p align="center">
   <a href="https://scitex.ai">
     <img src="docs/scitex-logo-blue-cropped.png" alt="SciTeX" width="400">
@@ -21,6 +11,18 @@
 <p align="center">
   <a href="https://scitex-os.readthedocs.io/">Full Documentation</a> · <code>pip install scitex-os</code>
 </p>
+
+<!-- scitex-badges:start -->
+<p align="center">
+  <a href="https://pypi.org/project/scitex-os/"><img src="https://img.shields.io/pypi/v/scitex-os.svg" alt="PyPI"></a>
+  <a href="https://pypi.org/project/scitex-os/"><img src="https://img.shields.io/pypi/pyversions/scitex-os.svg" alt="Python"></a>
+  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/test.yml"><img src="https://github.com/ywatanabe1989/scitex-os/actions/workflows/test.yml/badge.svg" alt="Tests"></a>
+  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml"><img src="https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml/badge.svg" alt="Install Test"></a>
+  <a href="https://codecov.io/gh/ywatanabe1989/scitex-os"><img src="https://codecov.io/gh/ywatanabe1989/scitex-os/graph/badge.svg" alt="Coverage"></a>
+  <a href="https://scitex-os.readthedocs.io/en/latest/"><img src="https://readthedocs.org/projects/scitex-os/badge/?version=latest" alt="Docs"></a>
+  <a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/license-AGPL_v3-blue.svg" alt="License: AGPL v3"></a>
+</p>
+<!-- scitex-badges:end -->
 
 ---
 
