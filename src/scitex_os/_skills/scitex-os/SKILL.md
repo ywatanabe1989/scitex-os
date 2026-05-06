@@ -1,6 +1,9 @@
 ---
 name: scitex-os
-description: Host-check helpers + safe file move. `check_host(name)` raises if not on the named machine; `is_host(name)` is the boolean version; `verify_host(...)` emits a warning. `mv(src, dst)` is a path-aware safe rename (atomic when same filesystem, copy+unlink across devices). Drop-in replacement for `socket.gethostname() == 'X'` checks at the top of host-specific scripts.
+description: |
+  [WHAT] Host-check helpers (`check_host`, `is_host`, `verify_host`) and a path-aware safe `mv(src, dst)`.
+  [WHEN] Use at the top of host-specific scripts instead of `socket.gethostname() == 'X'` checks; use `mv` for cross-filesystem renames.
+  [HOW] `import scitex_os; scitex_os.check_host("bm198")` (raises) or `scitex_os.is_host("bm198")` (bool); `scitex_os.mv(src, dst)` (atomic same-fs, copy+unlink across devices).
 primary_interface: python
 interfaces:
   python: 2
@@ -10,7 +13,7 @@ interfaces:
   hook: 0
   http: 0
 canonical-location: scitex-os/src/scitex_os/_skills/scitex-os/SKILL.md
-tags: [scitex-os, scitex-package]
+tags: [scitex-os]
 ---
 
 > **Interfaces:** Python ⭐⭐ · CLI — · MCP — · Skills ⭐⭐ · Hook — · HTTP —
@@ -19,7 +22,8 @@ tags: [scitex-os, scitex-package]
 
 Host-check helpers + safe file move. `check_host(name)` raises if not on the named machine; `is_host(name)` is the boolean version; `verify_host(...)` emits a warning. `mv(src, dst)` is a path-aware safe rename (atomic when same filesystem, copy+unlink across devices). Drop-in replacement for `socket.gethostname() == 'X'` checks at the top of host-specific scripts.
 
-See README.md and the package's public `__init__.py` for the full
-function list. This skill leaf exists so agents discover the package
-exists and roughly what shape it has — refer to the source for
-signatures.
+## Index
+
+- [01_installation.md](01_installation.md) — pip install and verify
+- [02_quick-start.md](02_quick-start.md) — host gate + safe move in 30 seconds
+- [03_python-api.md](03_python-api.md) — `check_host`, `is_host`, `verify_host`, `mv`
