@@ -65,6 +65,37 @@ sxos.mv(src, tgt)                 # shutil.move with mkdir(tgt)
 Standalone fork of `scitex.os`. Pure stdlib — zero deps. The umbrella package's
 `scitex.os` import path is preserved via a `sys.modules`-alias bridge.
 
+## Architecture
+
+```
+scitex_os/
+├── _host.py              ← is_host / check_host / verify_host
+├── _move.py              ← `mv` (shutil.move + mkdir(target.parent))
+└── __init__.py           ← public surface (zero deps beyond stdlib)
+```
+
+## Demo
+
+```mermaid
+flowchart LR
+    A[script.py] -->|is_host| B{hostname<br/>matches?}
+    B -- yes --> C[sxos.mv src → tgt<br/>auto mkdir parent]
+    B -- no --> D[skip / raise]
+```
+
+```python
+import scitex_os as sxos
+
+if sxos.is_host("compute-01"):
+    sxos.mv("results/run.csv", "/shared/runs/2026-05-07/run.csv")
+# parent dir is auto-created; cross-filesystem moves are handled.
+```
+
+```bash
+$ python -c "import scitex_os; print(scitex_os.is_host('laptop'))"
+True
+```
+
 ## Part of SciTeX
 
 `scitex-os` is part of [**SciTeX**](https://scitex.ai). Install via
