@@ -9,7 +9,7 @@
 <p align="center"><b>Host check + safe file move helpers — zero-dep, pure stdlib.</b></p>
 
 <p align="center">
-  <a href="https://scitex-os.readthedocs.io/">Full Documentation</a> · <code>pip install scitex-os</code>
+  <a href="https://scitex-os.readthedocs.io/">Full Documentation</a> · <code>uv pip install scitex-os[all]</code>
 </p>
 
 <!-- scitex-badges:start -->
