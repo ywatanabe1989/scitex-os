@@ -4,10 +4,12 @@
 from __future__ import annotations
 
 try:
-    from importlib.metadata import version as _v, PackageNotFoundError
+    from importlib.metadata import PackageNotFoundError
+    from importlib.metadata import version as _v
+
     try:
         __version__ = _v("scitex-os")
-    except PackageNotFoundError:
+    except PackageNotFoundError:  # pragma: no cover — only when not installed
         __version__ = "0.0.0+local"
     del _v, PackageNotFoundError
 except ImportError:  # pragma: no cover — only on ancient Pythons

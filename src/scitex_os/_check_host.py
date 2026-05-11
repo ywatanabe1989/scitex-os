@@ -23,7 +23,7 @@ def verify_host(keyword):
         sys.exit(1)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     # check_host("ywata")
     verify_host("titan")
     verify_host("ywata")
