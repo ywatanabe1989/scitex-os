@@ -14,17 +14,25 @@
 
 <!-- scitex-badges:start -->
 <p align="center">
-  <a href="https://pypi.org/project/scitex-os/"><img src="https://img.shields.io/pypi/v/scitex-os.svg" alt="PyPI"></a>
-  <a href="https://pypi.org/project/scitex-os/"><img src="https://img.shields.io/pypi/pyversions/scitex-os.svg" alt="Python"></a>
-  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/test.yml"><img src="https://github.com/ywatanabe1989/scitex-os/actions/workflows/test.yml/badge.svg" alt="Tests"></a>
-  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml"><img src="https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml/badge.svg" alt="Install Test"></a>
-  <a href="https://codecov.io/gh/ywatanabe1989/scitex-os"><img src="https://codecov.io/gh/ywatanabe1989/scitex-os/graph/badge.svg" alt="Coverage"></a>
-  <a href="https://scitex-os.readthedocs.io/en/latest/"><img src="https://readthedocs.org/projects/scitex-os/badge/?version=latest" alt="Docs"></a>
-  <a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/license-AGPL_v3-blue.svg" alt="License: AGPL v3"></a>
+  <a href="https://pypi.org/project/scitex-os/"><img src="https://img.shields.io/pypi/v/scitex-os?label=pypi" alt="pypi"></a>
+  <a href="https://pypi.org/project/scitex-os/"><img src="https://img.shields.io/pypi/pyversions/scitex-os?label=python" alt="python"></a>
+  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/rtd-sphinx-build-on-ubuntu-latest.yml"><img src="https://img.shields.io/github/actions/workflow/status/ywatanabe1989/scitex-os/rtd-sphinx-build-on-ubuntu-latest.yml?branch=develop&label=docs" alt="docs"></a>
+</p>
+<p align="center">
+  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/pytest-matrix-on-ubuntu-py3-11-3-12-3-13.yml"><img src="https://img.shields.io/github/actions/workflow/status/ywatanabe1989/scitex-os/pytest-matrix-on-ubuntu-py3-11-3-12-3-13.yml?branch=develop&label=tests" alt="tests"></a>
+  <a href="https://github.com/ywatanabe1989/scitex-os/actions/workflows/install-test.yml"><img src="https://img.shields.io/github/actions/workflow/status/ywatanabe1989/scitex-os/install-test.yml?branch=develop&label=install-check" alt="install-check"></a>
+  <a href="https://codecov.io/gh/ywatanabe1989/scitex-os"><img src="https://img.shields.io/codecov/c/github/ywatanabe1989/scitex-os/develop?label=cov" alt="cov"></a>
 </p>
 <!-- scitex-badges:end -->
 
 ---
+
+## Problem and Solution
+
+| # | Problem | Solution |
+|---|---------|----------|
+| 1 | **Host-specific scripts use `socket.gethostname() == 'X'`** -- different style across every repo; no consistent error message when the check fails | **`scitex_os.check_host` / `is_host` / `verify_host`** -- single canonical helper triple; `check_host` raises, `is_host` returns bool, `verify_host` warns |
+| 2 | **`os.rename(src, dst)` breaks across filesystems** -- "Invalid cross-device link" when the target is on a different mount | **`scitex_os.mv(src, dst)`** -- atomic when same filesystem, copy+unlink fallback otherwise; auto-creates parent dir |
 
 ## Installation
 
