@@ -8,13 +8,18 @@ import shutil
 
 import pytest
 
+_SCITEX_DEV_AVAILABLE = shutil.which("scitex-dev") is not None
 
-def test_audit_all_clean():
-    if shutil.which("scitex-dev") is None:
-        pytest.skip(
-            "scitex-dev not installed — add `scitex-dev[cli-audit]` "
-            "to [project.optional-dependencies.dev]"
-        )
+
+@pytest.mark.skipif(
+    not _SCITEX_DEV_AVAILABLE,
+    reason="scitex-dev not installed — add `scitex-dev[cli-audit]` to [dev]",
+)
+def test_audit_all_returns_without_raising():
+    # Arrange
     from scitex_dev.testing import audit_all_for_package
 
-    audit_all_for_package('scitex-os')
+    # Act
+    audit_all_for_package("scitex-os")
+    # Assert: completing without raising == clean audit.
+    assert True
