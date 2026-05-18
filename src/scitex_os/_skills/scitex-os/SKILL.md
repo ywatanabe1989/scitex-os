@@ -16,8 +16,6 @@ canonical-location: scitex-os/src/scitex_os/_skills/scitex-os/SKILL.md
 tags: [scitex-os]
 ---
 
-> **Interfaces:** Python ⭐⭐ · CLI — · MCP — · Skills ⭐⭐ · Hook — · HTTP —
-
 # scitex-os
 
 Host-check helpers + safe file move. `check_host(name)` raises if not on the named machine; `is_host(name)` is the boolean version; `verify_host(...)` emits a warning. `mv(src, dst)` is a path-aware safe rename (atomic when same filesystem, copy+unlink across devices). Drop-in replacement for `socket.gethostname() == 'X'` checks at the top of host-specific scripts.

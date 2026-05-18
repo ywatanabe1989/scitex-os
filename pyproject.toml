@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "scitex-os"
-version = "0.1.4"
+version = "0.1.5"
 description = "Host check + safe file mv — standalone module from the SciTeX ecosystem"
 readme = "README.md"
 license = "AGPL-3.0-only"
 requires-python = ">=3.9"
-authors = [{name = "Yusuke Watanabe", email = "ywatanabe@scitex.ai"}]
+authors = [{name = "Yusuke Watanabe", email = "noreply@scitex.ai"}]
 keywords = ["scitex", "os", "host", "mv"]
 classifiers = [
     "Development Status :: 3 - Alpha",
