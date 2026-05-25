@@ -46,7 +46,7 @@ Documentation = "https://scitex-os.readthedocs.io"
 where = ["src"]
 
 [tool.setuptools.package-data]
-scitex_os = ["_skills/**/*.md"]
+scitex_os = ["_skills/**/*.md", "_sphinx_html/**"]
 
 [project.entry-points."scitex_dev.skills"]
 scitex-os = "scitex_os"

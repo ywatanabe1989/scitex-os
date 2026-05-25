@@ -1,0 +1,6 @@
+﻿scitex\_os
+==========
+
+.. automodule:: scitex_os
+
+   
